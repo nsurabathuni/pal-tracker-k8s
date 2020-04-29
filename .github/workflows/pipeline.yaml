@@ -50,4 +50,4 @@ jobs:
       - run: sed -i 's/github.run_number/${{github.run_number}}/g' k8s/environments/review/deployment.yaml
       - run: kubectl apply -k k8s/environments/review
       - run: curl https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/6.3.1/flyway-commandline-6.3.1-linux-x64.tar.gz | tar xvz
-      - run: ./flyway-6.3.1/flyway -url="jdbc:postgresql://${{secrets.ELEPHANT_SQL_SERVER}}:5432/${{secrets.ELEPHANT_SQL_DATABASE}}" -locations=filesystem:databases/tracker migrate -user=${{secrets.ELEPHANT_SQL_USER}} -password=${{secrets.ELEPHANT_SQL_PASSWORD}}
+      - run: ./flyway-6.3.1/flyway -url="jdbc:postgresql://${{secrets.ELEPHANT_SQL_SERVER}}:5432/${{secrets.ELEPHANT_SQL_DATABASE}}" -locations=filesystem:databases/migrations migrate -user=${{secrets.ELEPHANT_SQL_USER}} -password=${{secrets.ELEPHANT_SQL_PASSWORD}}
