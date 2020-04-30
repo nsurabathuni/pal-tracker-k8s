@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pal-tracker
+spec:
+  template:
+    spec:
+      containers:
+        - name: pal-tracker-container
+          image: nsurabathuni/pal-tracker:build-github.run_number
+          env:
+           - name: SPRING_DATASOURCE_HIKARI_MAXIMUMPOOLSIZE
+             valueFrom:
+              configMapKeyRef:
+                name: pal-tracker
+                key: spring.datasource.hikari.maximumpoolsize

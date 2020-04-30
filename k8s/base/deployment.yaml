@@ -20,7 +20,7 @@ spec:
           image: nsurabathuni/pal-tracker:v1
           envFrom:
            - secretRef:
-               name: db-crendentials
+               name: db-credentials
           resources:
            limits:
             cpu: "100m"
