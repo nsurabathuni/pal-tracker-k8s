@@ -6,3 +6,5 @@ metadata:
     app: pal-tracker
 data:
   welcome.message: "hello from kubernetes"
+  MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "*"
+  MANAGEMENT_ENDPOINT_HEALTH_SHOWDETAILS: always
