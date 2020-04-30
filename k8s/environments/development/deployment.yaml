@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
         - name: pal-tracker-container
-          image: nsurabathuni/pal-tracker:build-12
+          image: nsurabathuni/pal-tracker:build-13
           env:
            - name: SPRING_DATASOURCE_HIKARI_MAXIMUMPOOLSIZE
              valueFrom:

@@ -28,6 +28,11 @@ spec:
             httpGet:
               port: 8080
               path: /
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 150
           lifecycle:
             preStop:
               exec:
